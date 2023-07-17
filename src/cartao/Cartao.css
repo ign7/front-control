@@ -1,0 +1,10 @@
+.container{
+   display: flex;
+   justify-content: space-between;
+   padding-top: 20px;
+}
+
+.card-img-top{
+   width: 318px;
+   height: 230px;
+}

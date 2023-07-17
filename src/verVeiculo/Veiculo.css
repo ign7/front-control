@@ -1,0 +1,48 @@
+
+.bloco{
+    display: flex;
+    justify-content: space-between;
+    border: solid 1px;
+    border-radius: 5px;
+    border-color: #cecece;   
+}
+
+.body-bloco{
+    display: flex;
+    flex-direction: column;
+    padding-left: 1.3rem;
+}
+
+.bodybutton{
+  display: flex;
+  align-items:end;
+  padding: 0.5rem;    
+}
+
+.manut{
+  padding-left: 0.5rem;
+}
+
+.body-bloco-list{
+  padding-left: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.place{
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  
+}
+
+
+
+.year{
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+}
+
+
+
+
+
+
