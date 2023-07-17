@@ -1,5 +1,4 @@
 
-
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 
@@ -9,6 +8,9 @@ import m3 from '../images/m3.png';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 import './Veiculo.css'
+
+
+
 
 function Veiculo() {
 
@@ -55,7 +57,7 @@ function Veiculo() {
               </div>
               <div className="bodybutton">
                 <div className="detail">
-                  <button onClick={getVeiculos} class="btn btn-danger">Detalhes</button>
+                  <Link to={`/detalveiculo/${Veiculos.id}`} className="btn btn-danger">Detalhes</Link>            
                 </div>
                 <div className='manut'>
                   <button data-bs-toggle="modal" data-bs-target="#manutencaomodal" class="btn btn-warning">Manutenção</button>

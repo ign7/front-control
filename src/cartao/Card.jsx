@@ -66,9 +66,14 @@ function Card() {
           <CadastroCarga id="cargaModal" />
         </div>
 
-      
-
+        <div className='title'>
+          <h2>Visualizar <span class="badge bg-success">Veiculos</span> <span class="badge bg-danger">Empresas</span> <span class="badge bg-info">Cargas</span> </h2>
         </div>
+   
+        </div>  
+
+
+        
        
     );
 }
