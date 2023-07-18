@@ -19,26 +19,12 @@ import DetailV from '../verVeiculo/DetailV';
 
 function HomePage() {
   return (
-    <div className="meu">
-     <Router>     
-        <Header/>
-        
-        <Routes>
-          <Route path="/detalveiculo/:id" element={<DetailV/>} />
-          <Route path="/veiculos" element={<Veiculo/>} />
-        </Routes>
-
-        
-          <Carrousel />
-          <Card />
-          <Veiculo />
-          <Carga />
-          <Empresa />
-        
-
-      </Router>
-
-         
+    <div className="meuHP">
+      <Carrousel />
+      <Card />
+      <Veiculo />
+      <Carga />
+      <Empresa />
     </div>
   );
 }

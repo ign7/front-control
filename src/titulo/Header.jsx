@@ -26,7 +26,7 @@ function Header() {
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
               <Link to="/home" class="nav-link">
-                Home
+                Home Page
               </Link>
             </li>
             
@@ -38,33 +38,30 @@ function Header() {
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
+                disabled               
               >
-                Dropdown
+                Disabled
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li>
-                  <a class="dropdown-item" href="#">
+                  <a class="dropdown-item"  disabled>
                     Action
                   </a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#">
+                  <a class="dropdown-item"  disabled>
                     Another action
                   </a>
                 </li>
                 <li></li>
                 <li>
-                  <a class="dropdown-item" href="#">
+                  <a class="dropdown-item"  disabled>
                     Something else here
                   </a>
                 </li>
               </ul>
             </li>
             <li class="nav-item">
-            
-              <Link to="/veiculos" class="nav-link">
-                Veiculos
-              </Link>
             </li>
           </ul>
           <form class="d-flex">
