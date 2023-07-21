@@ -25,11 +25,25 @@ function CadastroCarga(props) {
 
   const [listaempresa, setlistclient] = useState([]);
   const [empresaSelecionado, setempresaSelecionado] = useState(null);
+   
+
+  const [listaveichle, setlistveichle] = useState([]);
+  const [veichleSelecionado, setveichleSelecionado] = useState(null);
+
+
 
   function getempresas() {
     axios.get('http://localhost:8080/empresas').then(result => {
       setlistclient(result.data);
     });
+  }
+
+
+ function getveiculos(){
+      axios.get('http://localhost:8080/veiculos').then(result=>{
+        console.log(result.data);
+        setlistveichle(result.data);
+      });
   }
 
   function handleChangecarga(event) {
@@ -42,13 +56,20 @@ function CadastroCarga(props) {
     console.log(empresaId);
   }
 
+  function handleveiculoChange(veiculo) {
+    const veiculoId = veiculo.target.value;
+    setveichleSelecionado(veiculoId);
+    console.log(veiculoId);
+  }
+
   function salvarcarga() {
-    if(empresaSelecionado){
-      axios.post('http://localhost:8080/cargas/' + empresaSelecionado,cadastrocarga).then(result => {
+    if(empresaSelecionado && veichleSelecionado){
+      axios.post('http://localhost:8080/cargas/'+empresaSelecionado+'/'+veichleSelecionado,cadastrocarga).then(result => {
         console.log(result);
       }).catch(error=>{
            console.log(error)
       })
+     
     }
     
   }
@@ -71,6 +92,16 @@ function CadastroCarga(props) {
                     <option value="" >Selecione a Empresa</option >
                      {listaempresa.map(empresa => (                     
                       <option key={empresa.id} value={empresa.id}>{empresa.nome}</option>
+                    ))
+                    } 
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <label for="inputveicle4" class="form-label">Veiculo</label>
+                  <select className="form-select" name="empresa"  onChange={handleveiculoChange}  onClick={getveiculos} >
+                    <option value="" >Selecione o Veiculo</option >
+                     {listaveichle.map(veichle => (                     
+                      <option key={veichle.id} value={veichle.id}>{veichle.nome}</option>
                     ))
                     } 
                   </select>

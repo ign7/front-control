@@ -13,13 +13,25 @@ import { useParams } from 'react-router-dom';
 function DetailV() {
 
     const { id } = useParams(); 
+
+    const [listdetail,setdetail] = useState([]);
+
+     useEffect(()=>{
+        axios.get('http://localhost:8080/veiculos/'+id).then(result=>{
+            console.log(result.data)         
+        }).catch(error=>{
+            console.log(error);
+        })
+    });
+
+
     return (
         <div className='container'>
-            <div className='col-12'>
+          
 
             <h1>Detalhes do Veículo{id}</h1>
 
-            </div>
+            
         </div>
 
     );
