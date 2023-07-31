@@ -23,16 +23,19 @@ function CadastroCarga(props) {
     dataEntrega: ''
   });
 
-  const [listaempresa, setlistclient] = useState([]);
+   const [listaempresa, setlistclient] = useState([]);
   const [empresaSelecionado, setempresaSelecionado] = useState(null);
    
 
   const [listaveichle, setlistveichle] = useState([]);
-  const [veichleSelecionado, setveichleSelecionado] = useState(null);
+  const [veichleSelecionado, setveichleSelecionado] = useState(null); 
+
+  const [listaentrega, setlistentrega] = useState([]);
+  const [entregaSelecionado, setentregaSelecionado] = useState(null);
 
 
 
-  function getempresas() {
+   function getempresas() {
     axios.get('http://localhost:8080/empresas').then(result => {
       setlistclient(result.data);
     });
@@ -44,13 +47,21 @@ function CadastroCarga(props) {
         console.log(result.data);
         setlistveichle(result.data);
       });
+  } 
+
+  function getentregas(){
+    axios.get('http://localhost:8080/entregas').then(result=>{
+         console.log(result.data);
+         setlistentrega(result.data);
+
+    });
   }
 
   function handleChangecarga(event) {
     setcadastrocarga({ ...cadastrocarga, [event.target.name]: event.target.value });
   }
 
-  function handleEmpresaChange(empresa) {
+   function handleEmpresaChange(empresa) {
     const empresaId = empresa.target.value;
     setempresaSelecionado(empresaId);
     console.log(empresaId);
@@ -60,12 +71,21 @@ function CadastroCarga(props) {
     const veiculoId = veiculo.target.value;
     setveichleSelecionado(veiculoId);
     console.log(veiculoId);
+  } 
+
+  function handleentregaChange(entrega) {
+    const entregaId = entrega.target.value;
+    setentregaSelecionado(entregaId);
+    console.log(entregaId);
   }
 
   function salvarcarga() {
-    if(empresaSelecionado && veichleSelecionado){
-      axios.post('http://localhost:8080/cargas/'+empresaSelecionado+'/'+veichleSelecionado,cadastrocarga).then(result => {
+    if(entregaSelecionado){
+      axios.post('http://localhost:8080/cargas/'+entregaSelecionado,cadastrocarga )
+      .then(result => {
+        
         console.log(result);
+
       }).catch(error=>{
            console.log(error)
       })
@@ -86,9 +106,9 @@ function CadastroCarga(props) {
             <div class="modal-body">
 
               <form class="row g-3" >
-                <div class="col-md-6">
+                 <div class="col-md-6">
                   <label for="inputnome4" class="form-label">Empresa</label>
-                  <select className="form-select" name="empresa"  onChange={handleEmpresaChange}  onClick={getempresas} >
+                  <select className="form-select" name="empresa"  onChange={handleEmpresaChange}  disabled onClick={getempresas} >
                     <option value="" >Selecione a Empresa</option >
                      {listaempresa.map(empresa => (                     
                       <option key={empresa.id} value={empresa.id}>{empresa.nome}</option>
@@ -98,16 +118,26 @@ function CadastroCarga(props) {
                 </div>
                 <div class="col-md-6">
                   <label for="inputveicle4" class="form-label">Veiculo</label>
-                  <select className="form-select" name="empresa"  onChange={handleveiculoChange}  onClick={getveiculos} >
+                  <select className="form-select" name="empresa"  onChange={handleveiculoChange}  disabled onClick={getveiculos} >
                     <option value="" >Selecione o Veiculo</option >
                      {listaveichle.map(veichle => (                     
                       <option key={veichle.id} value={veichle.id}>{veichle.nome}</option>
                     ))
                     } 
                   </select>
+                </div> 
+                <div class="col-md-6">
+                  <label for="inputnome4" class="form-label">Entrega</label>
+                  <select className="form-select" name="entrega"  onChange={handleentregaChange}  onClick={getentregas} >
+                    <option value="" >Selecione a entrega</option >
+                     {listaentrega.map(entrega => (                     
+                      <option key={entrega.id} value={entrega.id}>{entrega.codigoCarga}</option>
+                    ))
+                    } 
+                  </select>
                 </div>
                 <div class="col-md-6">
-                  <label for="inputnome4" class="form-label">nome</label>
+                  <label for="inputnome4" class="form-label">Nome</label>
                   <input type="text"  name="nome" value={cadastrocarga.nome} onChange={handleChangecarga} class="form-control" id="inputnome4" />
                 </div>
                 <div class="col-md-6">
@@ -115,7 +145,7 @@ function CadastroCarga(props) {
                   <input type="text" name="local"  value={cadastrocarga.local} onChange={handleChangecarga} class="form-control" id="inputlocal4" />
                 </div>
                 <div class="col-6">
-                  <label for="inputPlaca" class="form-label">Distancia</label>
+                  <label for="inputPlaca" class="form-label">Distancia (Km)</label>
                   <input type="number" name="distancia" value={cadastrocarga.distancia} onChange={handleChangecarga} class="form-control" id="input4" />
                 </div>
                 <div class="col-md-6">
@@ -130,7 +160,7 @@ function CadastroCarga(props) {
             </div>
             <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          {empresaSelecionado ? (
+          {entregaSelecionado ? (
             <button class="btn btn-info" onClick={salvarcarga} data-bs-dismiss="modal">
               Save changes
             </button>

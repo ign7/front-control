@@ -32,7 +32,7 @@
 
 .place{
   font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  color: rgba(255, 0, 0, 0.671);
+ /*  color: rgba(255, 0, 0, 0.671); */
   
 }
 
@@ -40,7 +40,9 @@
 
 .year{
   font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  color: rgba(0, 128, 0, 0.747);
+ /*  color: rgba(0, 128, 0, 0.747); */
+
+
 }
 
 

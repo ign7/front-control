@@ -18,7 +18,8 @@ function DetailV() {
 
      useEffect(()=>{
         axios.get('http://localhost:8080/veiculos/'+id).then(result=>{
-            console.log(result.data)         
+            console.log(result.data) 
+            //setdetail(result.data);     
         }).catch(error=>{
             console.log(error);
         })
@@ -29,9 +30,15 @@ function DetailV() {
         <div className='container'>
           
 
-            <h1>Detalhes do Veículo{id}</h1>
-
-            
+            <h1>Detalhes do Veículo {id} </h1>
+           {/*  {
+                listdetail.map(detalhes=>(
+                    <div key={detalhes.id}>
+                    <p>detalhes.nome</p>
+                    <p></p>
+                    <p></p>
+                    </div>
+                ))}             */}
         </div>
 
     );

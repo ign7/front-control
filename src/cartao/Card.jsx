@@ -9,6 +9,8 @@ import truckgasolina from '../images/truckgasolina.png';
 import CadastroVeiculo from '../cadastroVeiculo/CadastroVeiculo'
 import CadastroEmpresa from '../cadastroEmpresa/CadastroEmpresa';
 import CadastroCarga from'../cadastroCarga/CadastroCarga'
+import CadastroEntrega from '../cadastroEntrega/CadastroEntrega';
+import entrega from '../images/entrega.png';
 
 
 function Card() {
@@ -39,6 +41,15 @@ function Card() {
                         </div>
                     </div>
 
+                    <div class="card " style={{ width: 20 + 'rem', height: 50 + '%' }}>
+                        <img src={entrega} class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">Cadastro de Entregas</h5>
+                            <p class="card-text">Somente Entregas Autorizadas</p>
+                            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#entregaModal">Cadastrar</button>
+                        </div>
+                    </div>
+
 
                     <div class="card " style={{ width: 20 + 'rem', height: 50 + '%' }}>
                         <img src={carga} class="card-img-top" alt="..." />
@@ -60,6 +71,10 @@ function Card() {
 
         <div className='form-empresa'>
           <CadastroEmpresa id="empresaModal" />
+        </div>
+
+        <div className='form-entrega'>
+          <CadastroEntrega id="entregaModal" />
         </div>
 
         <div className='form-carga'>

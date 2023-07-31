@@ -22,14 +22,17 @@ function App() {
   return (
 
     <Router>     
-    <Header/>    
+    <Header/>   
+     
     <Routes>
       <Route path="/detalveiculo/:id" element={<DetailV/>}/>
       <Route path="/home"  element={<HomePage/>}/>
     </Routes>
 
   </Router>
+   
 
+   
 
 
 
