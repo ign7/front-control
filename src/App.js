@@ -16,6 +16,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import Veiculo from './verVeiculo/Veiculo';
 import Empresa from './verEmpresa/Empresa';
 import DetailV from './verVeiculo/DetailV';
+import DetailCarga from './verCarga/DetailCarga';
 import HomePage from './home/HomePage';
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
      
     <Routes>
       <Route path="/detalveiculo/:id" element={<DetailV/>}/>
+      <Route path="/detalcarga/:id" element={<DetailCarga/>}/>
       <Route path="/home"  element={<HomePage/>}/>
     </Routes>
 
