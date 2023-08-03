@@ -18,7 +18,9 @@ function CadastroCarga(props) {
   const [cadastrocarga, setcadastrocarga] = useState({
     nome: '',
     local: '',
-    distancia: '',
+    distancia: '',  
+    peso:'',
+    valor:'',
     dataSolicitacao: '',
     dataEntrega: ''
   });
@@ -148,6 +150,14 @@ function CadastroCarga(props) {
                   <label for="inputPlaca" class="form-label">Distancia (Km)</label>
                   <input type="number" name="distancia" value={cadastrocarga.distancia} onChange={handleChangecarga} class="form-control" id="input4" />
                 </div>
+                <div class="col-6">
+                  <label for="inputAddress2" class="form-label">Peso</label>
+                  <input type="number"  name="peso"  value={cadastrocarga.peso}  onChange={handleChangecarga} class="form-control" id="inputV" />
+                </div>
+                <div class="col-6">
+                  <label for="inputAddress2" class="form-label">Valor</label>
+                  <input type="number"  name="valor"  value={cadastrocarga.valor}  onChange={handleChangecarga} class="form-control" id="inputV" />
+                </div>
                 <div class="col-md-6">
                   <label htmlFor="inputAno" className="form-label">Data Solicitação</label>
                   <input type="date" name="dataSolicitacao"  value={cadastrocarga.dataSolicitacao} onChange={handleChangecarga} class="form-control" id="inputo4" />
@@ -156,6 +166,7 @@ function CadastroCarga(props) {
                   <label for="inputAddress2" class="form-label">Data Entrega</label>
                   <input type="date"  name="dataEntrega"  value={cadastrocarga.dataEntrega}  onChange={handleChangecarga} class="form-control" id="inputV" />
                 </div>
+                
               </form>
             </div>
             <div class="modal-footer">
