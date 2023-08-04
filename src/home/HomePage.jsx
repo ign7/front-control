@@ -22,7 +22,7 @@ import Entrega from '../verEntrega/Entrega';
 function HomePage() {
   return (
     <div className="meuHP">
-      <Carrousel />
+     {/*  <Carrousel /> */}
       <Card />
       <Veiculo />
       <Entrega/>

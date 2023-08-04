@@ -52,6 +52,7 @@ function DeitailCarga() {
     function savedespesa(){
         axios.post('http://localhost:8080/despesas/'+idcargadespesaselect,cadastrodespesa).then(result=>{
             console.log("nao se esqueca do usestate como parametro na url acima ");
+            getcargasbyentrega()
         })
     }
 
@@ -85,34 +86,104 @@ function DeitailCarga() {
                 <h2 className='tcarga'>{Entregas.nome} / {Entregas.nomeEmpresa} </h2>
                 <img src={imgcarga} style={{ width: 15 + 'rem', height: 50 + '%' }} class="img-thumbnail" ></img>
                 <span className='place'><span >{Entregas.nomeEmpresa}</span></span>
-                <span className='place'>Valor: <span className='dadoscarga'>{Entregas.valor} </span></span>
-                <span className='place'>Lucro: <span className='dadoscarga'>{Entregas.lucro}</span></span>                
+                <hr></hr>
+                <span className='place'>Valor R$ : <span className='dadoscarga'>{Entregas.valor} ,00</span></span>
+                <hr></hr>
+                <span className='place'>Lucro R$ : <span className='dadoscarga'>{Entregas.lucro},00</span></span>      
+                <hr></hr>          
               </div>
 
 
-              <div className='bloco-2'>
+              
+
+              <div className='bloco-carga'>
+              
                 <div className=''>
-                    <label className='place'>Cidade/Região </label>
+                    <label className='place'>Cidade/Região</label>
                     <span className='dadoscarga'> {Entregas.local}</span>
                 </div>
+                <hr></hr>
                 <div className=''>
                     <label className='place'>Distancia: </label>
                     <span className='dadoscarga'> {Entregas.distancia} Kilometros</span>
                 </div>
+                <hr></hr>
                 <div className=''>
                     <label className='place'>Peso: </label>
                     <span className='dadoscarga'> {Entregas.peso} Kilos</span>
                 </div>
+                <hr></hr>
                 <div className=''>
                     <label className='place'>Data Solicitacao: </label>
                     <span className='dadoscarga'> {Entregas.dataSolicitacao}</span>
                 </div>
+                <hr></hr>
                 <div className=''>
                     <label className='place'>DataEntrega: </label>
                     <span className='dadoscarga'> {Entregas.dataEntrega}</span>
                 </div>
                 </div>
+                {Entregas.despesa!=null ?(
+              <div className='bloco-despesas'>                
+                <div className=''>
+                    <label className='place'>Gasto Ajudante </label>
+                    <span className='dadoscarga'> {Entregas.despesa.ajudante},00</span>
+                </div>
+                <hr></hr>
+                <div className=''>
+                    <label className='place'>Gasto Refeição: </label>
+                    <span className='dadoscarga'> {Entregas.despesa.refeicao},00</span>
+                </div>
+                <hr></hr>
+                <div className=''>
+                    <label className='place'>Gasto Pedagio: </label>
+                    <span className='dadoscarga'> {Entregas.despesa.pedagio},00</span>
+                </div>
+                <hr></hr>
+                <div className=''>
+                    <label className='place'>Gasto Combustivel: </label>
+                    <span className='dadoscarga'> {Entregas.despesa.combustivel},00</span>
+                </div>
+                <hr></hr>
+                <div className=''>
+                    <label className='place'>Litros: </label>
+                    <span className='dadoscarga'> {Entregas.despesa.litro} L</span>
+                </div>
+              </div>
+              ) : 
 
+
+              
+               <div className='bloco-despesas'>                
+                <div className=''>
+                    <label className='place'>Gasto Ajudante </label>
+                    <span className='dadoscarga'> 00,00</span>
+                </div>
+                <hr></hr>
+                <div className=''>
+                    <label className='place'>Gasto Refeição: </label>
+                    <span className='dadoscarga'> 00,00</span>
+                </div>
+                <hr></hr>
+                <div className=''>
+                    <label className='place'>Gasto Pedagio: </label>
+                    <span className='dadoscarga'> 00,00</span>
+                </div>
+                <hr></hr>
+                <div className=''>
+                    <label className='place'>Gasto Combustivel: </label>
+                    <span className='dadoscarga'> 00,00</span>
+                </div>
+                <hr></hr>
+                <div className=''>
+                    <label className='place'>Litros: </label>
+                    <span className='dadoscarga'> 0 L</span>
+                </div>
+              </div>
+              
+              }
+
+              
               <div className="bodybutton">
                 <div className="detail">
                         

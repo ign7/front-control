@@ -24,7 +24,15 @@
     
 }
 
-.bloco-2{
+.bloco-carga{
+    
+    display: flex;
+    flex-direction: column;
+   justify-content: space-around;
+   padding-top: 2.3rem;
+ 
+}
+.bloco-despesas{
     
     display: flex;
     flex-direction: column;
