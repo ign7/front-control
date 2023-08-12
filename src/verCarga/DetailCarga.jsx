@@ -56,6 +56,13 @@ function DeitailCarga() {
         })
     }
 
+   /*  function deletecargabyid(iddeletecarga){
+      axios.delete('http://localhost:8080/cargas/'+iddeletecarga).then(result=>{
+          console.log("delete");
+          //getcargasbyentrega();
+      })
+    } */
+
 
     
 
@@ -185,9 +192,9 @@ function DeitailCarga() {
 
               
               <div className="bodybutton">
-                <div className="detail">
-                        
-                </div>
+                {/* <div className="detail">
+                <button data-bs-toggle="modal"  onClick={deletecargabyid(Entregas.id)}>Excluir</button>   
+                </div> */}
                 <div className='manut'>
                 {Entregas.despesa==null ?(
                   <button data-bs-toggle="modal" value={Entregas.id} onClick={()=>HandleidcargaChange(Entregas.id)}   data-bs-target="#despesamodal" class="btn btn-warning">Despesas</button>
