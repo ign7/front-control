@@ -38,21 +38,21 @@ function CadastroCarga(props) {
 
 
    function getempresas() {
-    axios.get('http://woebegone-silk-production.up.railway.app/empresas').then(result => {
+    axios.get('https://woebegone-silk-production.up.railway.app/empresas').then(result => {
       setlistclient(result.data);
     });
   }
 
 
  function getveiculos(){
-      axios.get('http://woebegone-silk-production.up.railway.app/veiculos').then(result=>{
+      axios.get('https://woebegone-silk-production.up.railway.app/veiculos').then(result=>{
         console.log(result.data);
         setlistveichle(result.data);
       });
   } 
 
   function getentregas(){
-    axios.get('http://woebegone-silk-production.up.railway.app/entregas').then(result=>{
+    axios.get('https://woebegone-silk-production.up.railway.app/entregas').then(result=>{
          console.log(result.data);
          setlistentrega(result.data);
 
@@ -83,7 +83,7 @@ function CadastroCarga(props) {
 
   function salvarcarga() {
     if(entregaSelecionado){
-      axios.post('http://woebegone-silk-production.up.railway.app/cargas/'+entregaSelecionado,cadastrocarga )
+      axios.post('https://woebegone-silk-production.up.railway.app/cargas/'+entregaSelecionado,cadastrocarga )
       .then(result => {
         
         console.log(result);

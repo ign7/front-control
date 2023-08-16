@@ -14,7 +14,7 @@ function Empresa() {
 
 
   function getempresas() {
-    axios.get('http://woebegone-silk-production.up.railway.app/empresas').then(
+    axios.get('https://woebegone-silk-production.up.railway.app/empresas').then(
       result => {
         console.log(result.data);
         guardaempresas(result.data);

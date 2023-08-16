@@ -70,7 +70,7 @@ function salvar() {
   }
 
 
-  axios.post('http://woebegone-silk-production.up.railway.app/veiculos', formData, {
+  axios.post('https://woebegone-silk-production.up.railway.app/veiculos', formData, {
     headers: {
       'Content-Type': 'multipart/form-data'
     }

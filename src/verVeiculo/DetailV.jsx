@@ -17,7 +17,7 @@ function DetailV() {
     const [listdetail,setdetail] = useState([]);
 
      useEffect(()=>{
-        axios.get('http://woebegone-silk-production.up.railway.app/veiculos/'+id).then(result=>{
+        axios.get('https://woebegone-silk-production.up.railway.app/veiculos/'+id).then(result=>{
             console.log(result.data) 
             //setdetail(result.data);     
         }).catch(error=>{

@@ -13,7 +13,7 @@ function Entrega() {
 
 
   function getEntregas() {
-    axios.get('http://woebegone-silk-production.up.railway.app/entregas').then(
+    axios.get('https://woebegone-silk-production.up.railway.app/entregas').then(
       result => {
         console.log(result.data);
         guardaEntregas(result.data);
