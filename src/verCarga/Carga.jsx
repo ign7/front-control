@@ -13,7 +13,7 @@ function Carga() {
 
 
   function getcargas() {
-    axios.get('http://localhost:8080/cargas').then(
+    axios.get('http://woebegone-silk-production.up.railway.app/cargas').then(
       result => {
         console.log(result.data);
         guardacargas(result.data);

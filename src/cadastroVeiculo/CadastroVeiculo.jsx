@@ -70,7 +70,7 @@ function salvar() {
   }
 
 
-  axios.post('http://localhost:8080/veiculos', formData, {
+  axios.post('http://woebegone-silk-production.up.railway.app/veiculos', formData, {
     headers: {
       'Content-Type': 'multipart/form-data'
     }

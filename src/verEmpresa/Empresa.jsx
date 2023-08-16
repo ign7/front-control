@@ -14,7 +14,7 @@ function Empresa() {
 
 
   function getempresas() {
-    axios.get('http://localhost:8080/empresas').then(
+    axios.get('http://woebegone-silk-production.up.railway.app/empresas').then(
       result => {
         console.log(result.data);
         guardaempresas(result.data);

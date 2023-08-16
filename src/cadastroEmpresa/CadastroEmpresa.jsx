@@ -23,7 +23,7 @@ function CadastroEmpresa(props) {
   }
 
   function salvarempresa(){
-    axios.post('http://localhost:8080/empresas',cadastro).then(
+    axios.post('http://woebegone-silk-production.up.railway.app/empresas',cadastro).then(
       result=>{
         console.log(result);
         setatt(result);

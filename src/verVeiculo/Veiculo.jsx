@@ -31,7 +31,7 @@ function Veiculo() {
 
 
   function getVeiculos() {
-    axios.get('http://localhost:8080/veiculos').then(
+    axios.get('http://woebegone-silk-production.up.railway.app/veiculos').then(
       result => {
         console.log(result.data);
         guardaVeiculos(result.data);
@@ -45,7 +45,7 @@ function Veiculo() {
 
 
   function setmanutencao(){
-    axios.post('http://localhost:8080/manutencoes/'+idselectveichle,cadastromanut).then(result=>{
+    axios.post('http://woebegone-silk-production.up.railway.app/manutencoes/'+idselectveichle,cadastromanut).then(result=>{
       console.log(result.data);
 
     }).catch(error=>{

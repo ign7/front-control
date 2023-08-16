@@ -29,7 +29,7 @@ function DeitailCarga() {
     })
 
     function getcargasbyentrega() {
-        axios.get('http://localhost:8080/entregas/' + id).then(result => {
+        axios.get('http://woebegone-silk-production.up.railway.app/entregas/' + id).then(result => {
             console.log(result.data.cargas)
             setdetailcargas(result.data.cargas);
             setdetail(result.data);
@@ -50,14 +50,14 @@ function DeitailCarga() {
 
 
     function savedespesa(){
-        axios.post('http://localhost:8080/despesas/'+idcargadespesaselect,cadastrodespesa).then(result=>{
+        axios.post('http://woebegone-silk-production.up.railway.app/despesas/'+idcargadespesaselect,cadastrodespesa).then(result=>{
             console.log("nao se esqueca do usestate como parametro na url acima ");
             getcargasbyentrega()
         })
     }
 
    /*  function deletecargabyid(iddeletecarga){
-      axios.delete('http://localhost:8080/cargas/'+iddeletecarga).then(result=>{
+      axios.delete('http://woebegone-silk-production.up.railway.app/cargas/'+iddeletecarga).then(result=>{
           console.log("delete");
           //getcargasbyentrega();
       })
