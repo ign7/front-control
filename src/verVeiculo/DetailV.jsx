@@ -8,6 +8,7 @@ import m3 from '../images/m3.png';
 
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
+import Carrousel from '../carrousel/Carrousel';
 
 
 function DetailV() {
@@ -28,9 +29,11 @@ function DetailV() {
 
     return (
         <div className='container'>
+
+             <Carrousel />  
           
 
-            <h1>Detalhes do Veículo {id} </h1>
+            {/* <h1>Detalhes do Veículo {id} </h1> */}
            {/*  {
                 listdetail.map(detalhes=>(
                     <div key={detalhes.id}>
