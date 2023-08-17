@@ -30,22 +30,19 @@ function DetailV() {
     return (
         <div className='container'>
             <Carrousel />
-
-            <div>
-                <button onClick={getveiculos}>CLIQUE AQUI </button>
-            </div>
-
-        {listdetail.map(detalhes => (
-            <div key={detalhes.id} className='bloco-manut'>                
-                    <h1>Detalhes {detalhes.marca +'/'+detalhes.nome} </h1> 
-                    <div>
-                        <p>{detalhes.ano}</p>
-                        <p>{detalhes.placa}</p>
-                        <p></p>
+            <div className='col-12' >
+            {/* {listdetail.map(detalhes => ( */}
+                <div /* key={detalhes.id} */ className="bloco">
+                    <div className="body-bloco">
+                        <h2>Detalhes Veiculo {/* {detalhes.nome} */}</h2>
+                        <p>Visualizar Manutençoes e dados da Entrega </p>
                     </div>
-               
-            </div>
-             ))}
+                    <div className="bodybutton">
+                        <button onClick={getveiculos} class="btn btn-success">visualizar</button>
+                    </div>
+                </div>
+           {/*  ))} */}
+            </div>          
         </div>
 
     );
