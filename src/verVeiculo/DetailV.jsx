@@ -28,9 +28,9 @@ function DetailV() {
 
 
     return (
-        <div className='container'>
-            <Carrousel/>
+        <div className='container'>            
             <div className='col-12' >
+            <Carrousel/>
             {/* {listdetail.map(detalhes => ( */}
                 <div /* key={detalhes.id} */ className="bloco">
                     <div className="body-bloco">
