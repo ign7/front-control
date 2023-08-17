@@ -31,6 +31,10 @@ function DetailV() {
         <div className='container'>
             <Carrousel />
 
+            <div>
+                <button onClick={getveiculos}>CLIQUE AQUI </button>
+            </div>
+
         {listdetail.map(detalhes => (
             <div key={detalhes.id} className='bloco-manut'>                
                     <h1>Detalhes {detalhes.marca +'/'+detalhes.nome} </h1> 
