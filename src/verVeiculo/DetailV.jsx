@@ -13,35 +13,35 @@ import Carrousel from '../carrousel/Carrousel';
 
 function DetailV() {
 
-    const { id } = useParams(); 
+    const { id } = useParams();
 
-    const [listdetail,setdetail] = useState([]);
+    const [listdetail, setdetail] = useState([]);
 
-     useEffect(()=>{
-        axios.get('https://woebegone-silk-production.up.railway.app/veiculos/'+id).then(result=>{
-            console.log(result.data) 
-            //setdetail(result.data);     
-        }).catch(error=>{
+    function getveiculos() {
+        axios.get('https://woebegone-silk-production.up.railway.app/veiculos/' + id).then(result => {
+            console.log(result.data)
+            setdetail(result.data);
+        }).catch(error => {
             console.log(error);
         })
-    });
+    }
 
 
     return (
         <div className='container'>
+            <Carrousel />
 
-             <Carrousel />  
-          
-
-            {/* <h1>Detalhes do Veículo {id} </h1> */}
-           {/*  {
-                listdetail.map(detalhes=>(
-                    <div key={detalhes.id}>
-                    <p>detalhes.nome</p>
-                    <p></p>
-                    <p></p>
+        {listdetail.map(detalhes => (
+            <div key={detalhes.id} className='bloco-manut'>                
+                    <h1>Detalhes {detalhes.marca +'/'+detalhes.nome} </h1> 
+                    <div>
+                        <p>{detalhes.ano}</p>
+                        <p>{detalhes.placa}</p>
+                        <p></p>
                     </div>
-                ))}             */}
+               
+            </div>
+             ))}
         </div>
 
     );
