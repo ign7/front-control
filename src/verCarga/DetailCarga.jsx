@@ -94,9 +94,9 @@ function DeitailCarga() {
                 <img src={imgcarga} style={{ width: 15 + 'rem', height: 50 + '%' }} class="img-thumbnail" ></img>
                 <span className='place'><span >{Entregas.nomeEmpresa}</span></span>
                 <hr></hr>
-                <span className='place'>Valor R$ : <span className='dadoscarga'>{Entregas.valor} ,00</span></span>
+                <span className='place'>Valor R$ : <span className='dadoscarga'>{Entregas.valor} </span></span>
                 <hr></hr>
-                <span className='place'>Lucro R$ : <span className='dadoscarga'>{Entregas.lucro},00</span></span>      
+                <span className='place'>Lucro R$ : <span className='dadoscarga'>{Entregas.lucro}</span></span>      
                 <hr></hr>          
               </div>
 
@@ -134,22 +134,22 @@ function DeitailCarga() {
               <div className='bloco-despesas'>                
                 <div className=''>
                     <label className='place'>Gasto Ajudante </label>
-                    <span className='dadoscarga'> {Entregas.despesa.ajudante},00</span>
+                    <span className='dadoscarga'> {Entregas.despesa.ajudante}</span>
                 </div>
                 <hr></hr>
                 <div className=''>
                     <label className='place'>Gasto Refeição: </label>
-                    <span className='dadoscarga'> {Entregas.despesa.refeicao},00</span>
+                    <span className='dadoscarga'> {Entregas.despesa.refeicao}</span>
                 </div>
                 <hr></hr>
                 <div className=''>
                     <label className='place'>Gasto Pedagio: </label>
-                    <span className='dadoscarga'> {Entregas.despesa.pedagio},00</span>
+                    <span className='dadoscarga'> {Entregas.despesa.pedagio}</span>
                 </div>
                 <hr></hr>
                 <div className=''>
                     <label className='place'>Gasto Combustivel: </label>
-                    <span className='dadoscarga'> {Entregas.despesa.combustivel},00</span>
+                    <span className='dadoscarga'> {Entregas.despesa.combustivel}</span>
                 </div>
                 <hr></hr>
                 <div className=''>

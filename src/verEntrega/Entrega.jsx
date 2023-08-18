@@ -46,7 +46,7 @@ function Entrega() {
               <div className="body-bloco-list"   >
                 <h2 className='tcarga'>Codigo Entrega {Entregas.codigoCarga}</h2>
                 <img src={imgcarga} style={{ width: 15 + 'rem', height: 50 + '%' }} class="img-thumbnail" ></img>
-                <span className='year'>Lucro R$ {Entregas.total},00 </span>
+                <span className='year'>Lucro R$ {Entregas.total} </span>
               </div>
               <div className="bodybutton">
                 <div className="detail">
